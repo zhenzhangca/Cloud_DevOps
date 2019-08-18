@@ -1,12 +1,22 @@
 # Introduction
-What project you will deploy and project GitHub URL (your implementation is preferred)
-Describe your project at a high level (microserver, psql, java)
+## Overview
+The purpose of this repository is as follows:
+1) Demonstrate how to dockerize a Java Springboot Micro-service Application using Docker for local development environment.  
+2) Deploy the Application in AWS Elastic BeanStalk as a Dockerized container using the Elastic Beanstalk deployment service (combination of EC2, RDS, S3).
+## Application
+You can find the Trading Application that will be deployed at https://github.com/zhenzhangca/Trading_Application.git    
+It is a trading platform simulation that allows traders to trade securities. By building REST APIs using Springboot, this application can implement the following functions:
+- Manage trader information and accounts.
+- Execute security orders (e.g. buy/sell stocks).
+- Process data in batch and real-time.   
 
+**Architecture diagram**  
+
+![trading-app architecture](assets/trading-app%20architecture.png)
 
 # Dockerize trading_app
 ## Clone project
-Clone the Trading_Application project from GitHub to `/home/centos/dev/jrvs/bootcamp
-` using command `git clone https://github.com/zhenzhangca/Trading_Application.git`.
+Clone the Trading_Application project from GitHub using command `git clone https://github.com/zhenzhangca/Trading_Application.git`.
 ## Commands
 ```
 #start docker
@@ -53,6 +63,9 @@ curl localhost:8080/health
 #verify Swagger UI from the browser
 localhost:8080/swagger-ui.html
 ```
+## Swagger-UI page
+![swagger](assets/swagger.png)
+
 ## Docker Architecture Diagram
 ![Dockerize trading-app Diagram](assets/Dockerize%20trading-app%20Diagram.png)
 
