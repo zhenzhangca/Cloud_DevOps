@@ -94,10 +94,10 @@ localhost:8080/swagger-ui.html
   In the commands above, we set up the value of environment variables `POSTGRES_PASSWORD`, `POSTGRES_DB` and `POSTGRES_USER`. Then, a database with the name of `POSTGRES_DB` will be created when the postgres image is first started.  
   2) Tables  
   In the Dockerfile, command `FROM postgres` means regarding the postgres image from Dockerhub as a basic image, command `COPY ./sql_ddl/schema.sql /docker-entrypoint-initdb.d/` means copy `schema.sql` file from localhost to the postgres container.  
-  After the entrypoint calls initdb to create the default postgres user and database, it will run `schema.sql` file automatically to create following tables.  
+  After the entrypoint calls initdb to create the default postgres user and database, it will run `schema.sql` file automatically to create following tables: 
    
-   ER diagram  
-   
+**ER diagram**  
+
    ![ER](assets/ER.png)  
    
 # Cloud Architecture Diagram
