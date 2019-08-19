@@ -101,11 +101,20 @@ localhost:8080/swagger-ui.html
    ![ER](assets/ER.png)  
    
 # Cloud Architecture Diagram
-- trading app diagram
-  - use draw.io and aws icons (it's in the draw.io library)
-  - include ec2, alb, auto scaling, target group, rds
-  - security groups
-  - label all important ports(e.g. ALB HTTP, ec2 tpc:5000, RDS tcp:5432)
+![Cloud Architecture Diagram](assets/Cloud%20Architecture%20Diagram.png)
+
+The diagram includes the following components:
+- trading-app-alb: Application Load Balancer listens on port 80
+- trading-app-alb-sg: Security Group of Load Balancer opens port 80 to Internet Gateway anywhere
+- trading-app-server: EC2 instance with docker engine and trading-app container running 
+- trading-app-server-sg: Security Group of EC2 instances opens port 8080
+- trading-app-asg: Auto-scaling Group of EC2 instances
+- trading-app-rds: RDS instance for database management
+- trading-app-rds-sg: Security Group of RDS opens port 5432
+
+Application Load Balancer can load balance the traffic to make the trading app more robust, if any EC2 instance is down(unhealthy), the Load Balancer will not forward traffic to that node, but 2 backups are still healthy to make the app up and running regularly.   
+Auto-scaling Group is a way to automatically scale up or down the number of EC2 instance that are being allocated to the application based on its needs at any given time.
+
   
 # AWS EB and Jenkins CI/CD Pipeline Diagram
 - Please refer to Jenkins guide architecture diagram.
