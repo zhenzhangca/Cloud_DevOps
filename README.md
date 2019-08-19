@@ -68,7 +68,7 @@ localhost:8080/swagger-ui.html
 
 ![swagger](assets/swagger.png)
 ## Docker Architecture Diagram
-![Dockerize trading-app Diagram](assets/Dockerize%20trading-app%20Diagram.png)
+![dockerize-Diagram](assets/dockerize-Diagram.png)
 
 ## Dockerfiles
 
