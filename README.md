@@ -116,5 +116,9 @@ Application Load Balancer can load balance the traffic to make the trading app m
 Auto-scaling Group is a way to automatically scale up or down the number of EC2 instance that are being allocated to the application based on its needs at any given time.
 
   
-# AWS EB and Jenkins CI/CD Pipeline Diagram
-- Please refer to Jenkins guide architecture diagram.
+# AWS EB and Jenkins CI/CD Pipeline Diagram  
+![Jenkins Deployment Architecture](assets/Jenkins%20Deployment%20Architecture.jpg)
+In this part, I use Jenkins to build a pipeline which deploys the latest trading app source code from GitHub to AWS EB environments (both dev and prod environment). Specifically, the pipeline is able to execute the following steps automatically:  
+1. Download the latest source code from GitHub
+2. Compile and package source code
+3. Deploy to dev or prod environment using EB CLI
