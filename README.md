@@ -2,7 +2,8 @@
 ## Overview
 The purpose of this repository is as follows:
 1) Demonstrate how to dockerize a Java Springboot Micro-service Application using Docker for local development environment.  
-2) Deploy the Application in AWS Elastic BeanStalk as a Dockerized container using the Elastic Beanstalk deployment service (combination of EC2, RDS, S3).
+2) Deploy the Application in AWS Elastic BeanStalk as a Dockerized container using the Elastic Beanstalk deployment service (combination of EC2, RDS, Autoscaling).   
+3) On the basis of point 2,  use Jenkins to build a CI/CD pipeline which deploys the latest trading app source code from GitHub to AWS EB environments (both dev and prod environment).
 ## Application
 You can find the Trading Application that will be deployed at https://github.com/zhenzhangca/Trading_Application.git    
 It is a trading platform simulation that allows traders to trade securities. By building REST APIs using Springboot, this application can implement the following functions:
